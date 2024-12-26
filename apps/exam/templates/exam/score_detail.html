@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="az-content-title mg-b-5 mg-b-lg-8">
+    <h2>Exam Submitted Successfully</h2>
+</div>
+
+<div class="text-center">
+    <p class="lead">Thank you for completing your exam!</p>
+    <p>Remember, every step forward is a step closer to achieving your goals. Keep up the hard work and stay motivated!</p>
+    <button id="showModal" class="btn btn-primary">Go to Home</button>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Submission Confirmed</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Your exam has been successfully submitted. We wish you the best in achieving your goals!
+            </div>
+            <div class="modal-footer">
+                <a href="/home" class="btn btn-success">Back to Home</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('showModal').addEventListener('click', function () {
+        $('#confirmationModal').modal('show');
+    });
+</script>
+
+{% endblock content %}
